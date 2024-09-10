@@ -1,0 +1,43 @@
+import tkinter,calendar
+
+screen=tkinter.Tk()
+screen.geometry("900x400")
+
+screen.title("Calender")
+screen.configure(background="orange")
+
+def exit():
+    screen.destroy()
+
+def sc():
+    screen2=tkinter.Tk()
+    screen2.geometry("900x450")  
+    screen2.title("Calendar")
+    screen2.configure(background="white")  
+    year=int(entry.get())
+    calendery=calendar.calendar(year)
+    text=tkinter.Text(screen2,height=450)
+    text.insert("1.0",calendery)
+    text.pack()
+    screen2.mainloop()  
+
+label=tkinter.Label(screen,background="grey",text="CALENDAR",font=("times new roman",100))
+label.pack()
+
+label=tkinter.Label(screen,background="green",text="Enter Year",font=("times new roman",35))
+label.pack()
+
+entry=tkinter.Entry(screen,background="white",fg="red",font=("times new roman",35))
+entry.pack()
+
+button=tkinter.Button(screen,background="red",text="Show Calendar",command=sc,font=("times new roman",35))
+button.pack()
+
+button=tkinter.Button(screen,background="red",text="Exit",command=exit,font=("times new roman",35))
+button.pack()
+
+  
+
+
+
+screen.mainloop()
